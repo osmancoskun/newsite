@@ -1,0 +1,10 @@
+<div>
+  <slot />
+</div>
+
+<style>
+  div:hover {
+    background: white;
+    box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+  }
+</style>

@@ -20,7 +20,7 @@
   <div class="h-10 flex justify-center gap-5 mt-5">
     {#each accounts as account}
       <a href={account.url} class="h-10 w-10">
-        <svelte:component this={Icon} brands name={account.icon} size="3x" />
+        <svelte:component this={Icon} brands name={account.icon} size="2x" />
       </a>
     {/each}
   </div>

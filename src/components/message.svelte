@@ -10,12 +10,7 @@
       <img src={Me} alt="Osman Coskun" />
     </div>
   </div>
-  <div
-    class:text-black={!isDark}
-    class:bg-base-200={isDark}
-    class:bg-base-300={!isDark}
-    class="chat-bubble"
-  >
+  <div class="chat-bubble">
     <slot />
   </div>
 </div>

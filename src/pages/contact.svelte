@@ -1,6 +1,8 @@
 <script>
   import { Message, Icon } from "$components";
+  let mails = ["me@osmancoskun.com", "osman.coskun95@gmail.com"];
   let accounts = [
+    { url: "https://twitter.com/mergin_sh", icon: "twitter" },
     { url: "https://github.com/osmancoskun", icon: "github" },
     { url: "https://twitter.com/mergin_sh", icon: "twitter" },
     {
@@ -17,6 +19,13 @@
     Or If you want, you can follow me on other platforms by clicking the links
     below
   </Message>
+  <div class="h-10 flex justify-center gap-5 mt-5">
+    {#each mails as mail}
+      <a href="mailto:{mail}" class="h-10 w-10">
+        <svelte:component this={Icon} solid name="envelope" size="2x" />
+      </a>
+    {/each}
+  </div>
   <div class="h-10 flex justify-center gap-5 mt-5">
     {#each accounts as account}
       <a href={account.url} class="h-10 w-10">

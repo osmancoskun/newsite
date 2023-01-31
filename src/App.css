@@ -12,7 +12,3 @@ body {
   @apply card;
   @apply py-5;
 }
-
-.myicon {
-  background-color: inherit;
-}

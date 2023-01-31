@@ -7,7 +7,7 @@
   export let url = "";
 </script>
 
-<div class="mockup-window border bg-base-300 w-1/2">
+<div class="mockup-window bg-base-300 w-1/2">
   <div class="px-4 py-3 bg-base-200 flex  flex-col">
     <b> {title} </b>
     <br />

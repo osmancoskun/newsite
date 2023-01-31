@@ -30,12 +30,11 @@
 </script>
 
 <main class="mypage">
-  <div class="btn-group mx-auto">
+  <div class="btn-group mx-auto rounded-lg">
     {#each tabs as tab}
       <button
         on:click={() => (activetab = tab.id)}
-        class="btn"
-        class:glass={activetab != tab.id}
+        class="btn btn-ghost"
         class:text-black={activetab != tab.id}
       >
         <Icon solid name={tab.icon} size="1x" />

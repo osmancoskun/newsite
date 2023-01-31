@@ -28,7 +28,6 @@
 
 <style>
   a {
-    color: hsl(var(--n));
     background-color: inherit;
   }
 </style>

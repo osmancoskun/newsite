@@ -1,5 +1,6 @@
 <script>
-  import { Message, ProjectCard, Icon } from "$components";
+  import { Message } from "$components";
+  import { current_theme } from "$store";
   let datas = [
     {
       id: "pardus",
@@ -115,7 +116,11 @@
   <Message>You can find the my previous experiences and details here.</Message>
   <Message>For more details, click company name on the list</Message>
   <div class="flex mt-10">
-    <ul class="steps steps-vertical w-4/12 border h-1/2">
+    <ul
+      class:border={$current_theme == "light"}
+      class:border-invisible={$current_theme == "dark"}
+      class="steps steps-vertical w-4/12 h-1/2"
+    >
       {#each datas as data}
         <li
           on:click={() => (activetab = data)}
@@ -129,7 +134,11 @@
       {/each}
     </ul>
 
-    <div class="w-8/12 border p-3 flex flex-col">
+    <div
+      class:border={$current_theme == "light"}
+      class:border-invisible={$current_theme == "dark"}
+      class="w-8/12 p-3 flex flex-col"
+    >
       <span class="mx-auto text-lg">
         I {activetab.active ? "am working" : "worked"} as
         <b>
@@ -163,6 +172,6 @@
 
 <style>
   .projectdetails {
-    max-height: calc(100vh - 37vh);
+    max-height: calc(100vh - 45vh);
   }
 </style>

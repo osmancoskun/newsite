@@ -32,11 +32,7 @@
 <main class="mypage">
   <div class="btn-group mx-auto rounded-lg">
     {#each tabs as tab}
-      <button
-        on:click={() => (activetab = tab.id)}
-        class="btn btn-ghost"
-        class:text-black={activetab != tab.id}
-      >
+      <button on:click={() => (activetab = tab.id)} class="btn btn-ghost">
         <Icon solid name={tab.icon} size="1x" />
         <span class="ml-1">{tab.id}</span>
       </button>

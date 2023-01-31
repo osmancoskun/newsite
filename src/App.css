@@ -8,36 +8,9 @@ body {
   padding: 0;
 }
 
-.floating {
-  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
-}
-
-.floating-dark {
-  box-shadow: 5px 5px 10px gray, -15px -15px 30px black
-}
-
-.myhover:hover {
-  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
-}
-
-.myhover-dark:hover {
-  box-shadow: 2px 2px 5px gray, -5px -5px 10px black
-}
-
-
 .mypage {
   @apply card;
   @apply py-5;
-}
-
-.myinset {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
-}
-
-.myinset-dark {
-  box-shadow: black 0px 30px 50px -12px inset,
-    black 0px 18px 26px -18px inset;
 }
 
 .myicon {

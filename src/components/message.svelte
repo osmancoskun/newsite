@@ -1,5 +1,7 @@
 <script>
   import { Me } from "$assets";
+  import { current_theme } from "$store";
+  $: isDark = $current_theme == "dark" ? true : false;
 </script>
 
 <div class="chat chat-end">
@@ -8,7 +10,12 @@
       <img src={Me} alt="Osman Coskun" />
     </div>
   </div>
-  <div class="chat-bubble">
+  <div
+    class:text-black={!isDark}
+    class:bg-base-200={isDark}
+    class:bg-base-300={!isDark}
+    class="chat-bubble"
+  >
     <slot />
   </div>
 </div>

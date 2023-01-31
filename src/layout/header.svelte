@@ -1,6 +1,5 @@
 <script>
-  import { current_page, current_dimension, current_theme } from "$store";
-  import { Hover } from "$components";
+  import { current_page, current_theme } from "$store";
   let routes = [
     {
       id: "contact",
@@ -16,20 +15,12 @@
     },
   ];
   let theme = document.querySelector("html").getAttribute("data-theme");
-  let dimension = document.querySelector("html").getAttribute("data-dimension");
   function change_theme() {
     let newTheme = theme == "light" ? "dark" : "light";
     document.querySelector("html").setAttribute("data-theme", newTheme);
     theme = newTheme;
     $current_theme = newTheme;
   }
-  function change_dimension() {
-    let newDimension = dimension == "2d" ? "3d" : "2d";
-    document.querySelector("html").setAttribute("data-dimension", newDimension);
-    dimension = newDimension;
-    $current_dimension = newDimension;
-  }
-
   function set_page(page_id = "") {
     $current_page = page_id;
   }
@@ -39,107 +30,19 @@
   <div class="menu menu-horizontal px-1 gap-2 flex-1">
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <li
-      class:floating={$current_page == "/" &&
-        dimension == "3d" &&
-        theme == "light"}
-      class:floating-dark={$current_page == "/" &&
-        dimension == "3d" &&
-        theme == "dark"}
-      class:border={theme == "light"}
-      class:border-invisible={theme == "dark"}
       class="font-bold rounded-lg cursor-pointer"
       on:click={() => set_page("/")}
     >
-      <Hover>Osman Coskun</Hover>
+      Osman Coskun
     </li>
   </div>
   <ul class="menu menu-horizontal px-1 gap-2 flex">
     {#each routes as route}
-      <!-- svelte-ignore a11y-click-events-have-key-events class:border={dimension == "3d"} -->
-      <li
-        class="rounded-lg cursor-pointer"
-        class:border={theme == "light"}
-        class:border-invisible={theme == "dark"}
-        class:floating={$current_page == route.id &&
-          dimension == "3d" &&
-          theme == "light"}
-        class:floating-dark={$current_page == route.id &&
-          dimension == "3d" &&
-          theme == "dark"}
-        on:click={() => set_page(route.id)}
-      >
-        <Hover>
-          {route.label}
-        </Hover>
+      <li class="rounded-lg cursor-pointer" on:click={() => set_page(route.id)}>
+        {route.label}
       </li>
     {/each}
-    <label class="swap swap-rotate">
-      <!-- CUBE -->
-      <input type="checkbox" on:click={change_dimension} />
 
-      <svg
-        class="swap-off fill-current w-6 h-6"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        ><g id="SVGRepo_bgCarrier" stroke-width="0" /><g
-          id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        /><g id="SVGRepo_iconCarrier"
-          ><path
-            d="M2.594,18.914l9,4H11.6a.974.974,0,0,0,.8,0h.008l9-4A1,1,0,0,0,22,18V6a1.04,1.04,0,0,0-.594-.914l-9-4a1,1,0,0,0-.812,0l-9,4A1.041,1.041,0,0,0,2,6V18A1,1,0,0,0,2.594,18.914ZM4,7.539l7,3.111v9.811L4,17.35ZM20,17.35l-7,3.111V10.65l7-3.111ZM12,3.094,18.538,6,12,8.906,5.462,6Z"
-          /></g
-        ></svg
-      >
-      <!--input type="checkbox" class="toggle" checked /-->
-      <!-- SQUARE -->
-      <svg
-        class="swap-on fill-current w-6 h-6"
-        viewBox="0 0 64 64"
-        xmlns="http://www.w3.org/2000/svg"
-        ><g id="SVGRepo_bgCarrier" stroke-width="0" /><g
-          id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        /><g id="SVGRepo_iconCarrier">
-          <rect
-            id="Icons"
-            x="-1152"
-            y="-64"
-            width="1280"
-            height="800"
-            style="fill:none;"
-          />
-          <g id="Icons1">
-            <g id="Strike" /> <g id="H1" /> <g id="H2" /> <g id="H3" />
-            <g id="list-ul" /> <g id="hamburger-1" /> <g id="hamburger-2" />
-            <g id="list-ol" /> <g id="list-task" /> <g id="trash" />
-            <g id="vertical-menu" /> <g id="horizontal-menu" />
-            <g id="sidebar-2" /> <g id="Pen" /> <g id="Pen1" />
-            <g id="clock" /> <g id="external-link" /> <g id="hr" />
-            <g id="info" /> <g id="warning" /> <g id="plus-circle" />
-            <g id="minus-circle" /> <g id="vue" /> <g id="cog" />
-            <g id="logo" /> <g id="radio-check" /> <g id="eye-slash" />
-            <g id="eye" /> <g id="toggle-off" />
-            <path
-              id="square"
-              d="M50.005,56l-35.989,0c-3.309,0 -5.995,-2.686 -5.995,-5.995l0,-36.011c0,-3.308 2.686,-5.995 5.995,-5.995l35.989,0c3.309,0 5.995,2.687 5.995,5.995l0,36.011c0,3.309 -2.686,5.995 -5.995,5.995Zm-0.993,-4.001c1.65,0 2.989,-1.339 2.989,-2.989l0,-34.021c0,-1.649 -1.339,-2.989 -2.989,-2.989l-34.003,0c-1.65,0 -2.989,1.34 -2.989,2.989l0,34.021c0,1.65 1.339,2.989 2.989,2.989l34.003,0Z"
-            /> <g id="shredder" />
-            <g id="spinner--loading--dots-" /> <g id="react" />
-            <g id="check-selected" /> <g id="turn-off" />
-            <g id="code-block" /> <g id="user" /> <g id="coffee-bean" />
-            <g id="coffee-beans">
-              <g id="coffee-bean1" />
-            </g> <g id="coffee-bean-filled" />
-            <g id="coffee-beans-filled">
-              <g id="coffee-bean2" />
-            </g> <g id="clipboard" /> <g id="clipboard-paste" />
-            <g id="clipboard-copy" /> <g id="Layer1" />
-          </g>
-        </g></svg
-      >
-    </label>
-    <div class="divider divider-vertical" />
     <label class="swap swap-rotate">
       <!-- this hidden checkbox controls the state -->
       <input type="checkbox" on:click={change_theme} />

@@ -12,3 +12,7 @@ body {
   @apply card;
   @apply py-5;
 }
+
+:root {
+  --p: gray
+}

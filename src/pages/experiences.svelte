@@ -155,7 +155,11 @@
       class="steps steps-horizontal md:steps-vertical md:w-4/12 h-1/2 overflow-auto"
     >
       {#each datas as data}
-        <li on:click={() => (activetab = data)} class="step cursor-pointer">
+        <li
+          class:step-neutral={data.active}
+          on:click={() => (activetab = data)}
+          class="step cursor-pointer"
+        >
           <div class="p-3 rounded-md hover:bg-base-300">
             {data.company} <br />
             <span class="hidden md:block">{data.time}</span>

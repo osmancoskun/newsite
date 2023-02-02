@@ -1,17 +1,21 @@
+<script>
+  import { Message } from "$components";
+</script>
+
 <main class="mypage">
-  Flag Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum tenetur
-  modi hic labore eveniet assumenda iure nam obcaecati? Exercitationem quos
-  blanditiis voluptatum perferendis obcaecati praesentium, earum mollitia quis
-  doloribus eos. Consequatur neque autem commodi quidem atque ad consectetur
-  tenetur dignissimos in error velit odit tempore totam magnam magni nulla, iste
-  dolore, possimus repellat fugit odio alias dolor. Sint, ea! Dignissimos! Ut,
-  doloribus! Fuga accusamus at laudantium, sit rem sapiente a quisquam inventore
-  incidunt sint, eos amet consequuntur, cumque fugiat eius animi itaque eum
-  molestias. Expedita maxime sequi molestiae deserunt repellendus? Labore dolore
-  expedita modi fugit, illo tenetur totam ex neque, omnis earum reprehenderit
-  minima placeat eum praesentium. Cum sit dicta ut, nemo libero consequatur sed,
-  saepe deleniti sapiente rem magni. Necessitatibus iusto iste perspiciatis
-  esse. Consequatur similique doloribus quod rem aut adipisci, libero ipsa porro
-  maiores incidunt. Mollitia esse at autem corporis? Dolore, est! Non eos saepe
-  vitae harum fugiat.
+  <Message>Welcome to my personal website!</Message>
+  <Message>
+    My name is Osman Coskun and I am a software engineer with extensive
+    experience in front-end development and full-stack web development.
+  </Message>
+  <Message>
+    I am currently working as a core developer for a Linux distribution where I
+    utilize GTK4 and Python to create innovative solutions.
+  </Message>
+  <Message>
+    Through this website, I hope to share my technical knowledge and showcase my
+    skills as a developer.
+  </Message>
+
+  <Message>Thank you for visiting!</Message>
 </main>

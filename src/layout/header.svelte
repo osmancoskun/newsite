@@ -1,17 +1,26 @@
 <script>
   import { current_page, current_theme } from "$store";
+  import { Icon } from "$components";
   let routes = [
+    {
+      id: "home",
+      label: "Home",
+      icon: "house",
+    },
     {
       id: "contact",
       label: "Contact",
+      icon: "phone",
     },
     {
       id: "projects",
       label: "Projects",
+      icon: "window-restore",
     },
     {
       id: "experiences",
       label: "Experiences",
+      icon: "history",
     },
   ];
   let theme = document.querySelector("html").getAttribute("data-theme");
@@ -27,16 +36,13 @@
 </script>
 
 <div class="navbar">
-  <div class="menu menu-horizontal px-1 gap-2 flex-1">
+  <div class="menu menu-horizontal px-5 gap-2 mx-auto md:flex-1">
     <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <li
-      class="font-bold rounded-lg cursor-pointer"
-      on:click={() => set_page("/")}
-    >
-      Osman Coskun
+    <li class="font-bold cursor-pointer" on:click={() => set_page("home")}>
+      <span class="text-2xl"> Osman Coskun </span>
     </li>
   </div>
-  <ul class="menu menu-horizontal px-1 gap-2 flex">
+  <ul class="hidden md:flex menu menu-horizontal px-1 gap-2">
     {#each routes as route}
       <li class="rounded-lg cursor-pointer" on:click={() => set_page(route.id)}>
         {route.label}
@@ -68,4 +74,15 @@
       >
     </label>
   </ul>
+</div>
+<div class="btm-nav md:hidden fixed z-50">
+  {#each routes as route}
+    <button
+      on:click={() => set_page(route.id)}
+      class={route.id == $current_page ? "active bg-base-300" : ""}
+    >
+      <Icon solid name={route.icon} />
+      <span class="btm-nav-label mt-2">{route.label}</span>
+    </button>
+  {/each}
 </div>
